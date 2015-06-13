@@ -131,6 +131,7 @@ AccountsEntry.entrySignUpEvents = {
 
 
     Meteor.call 'entryValidateSignupCode', signupCode, (err, valid) ->
+      console.log(AccountsEntry.settings)
       if valid
         newUserData =
           username: username
@@ -148,9 +149,9 @@ AccountsEntry.entrySignUpEvents = {
           isEmailSignUp = _.contains([
             'USERNAME_AND_EMAIL',
             'EMAIL_ONLY'], AccountsEntry.settings.passwordSignupFields)
-          if isEmailSignUp 
-            userCredential = email 
-          else 
+          if isEmailSignUp
+            userCredential = email
+          else
             userCredential = username
           if AccountsEntry.settings.signInAfterRegistration is true
             Session.set 'talkingToServer', true
@@ -163,7 +164,7 @@ AccountsEntry.entrySignUpEvents = {
                 Router.go Session.get('fromWhere')
                 Session.set 'fromWhere', undefined
               else
-                Router.go AccountsEntry.settings.dashboardRoute
+                Router.go AccountsEntry.settings.setupUserRoute
 
           else
             if AccountsEntry.settings.emailVerificationPendingRoute

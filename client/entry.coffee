@@ -21,6 +21,7 @@ AccountsEntry =
     if email.match emailPattern then true else false
 
   config: (appConfig) ->
+    console.log(appConfig)
     @settings = _.extend(@settings, appConfig)
 
     T9n.defaultLanguage = "en"
