@@ -154,6 +154,7 @@ AccountsEntry.entrySignUpEvents = {
           else
             userCredential = username
           if AccountsEntry.settings.signInAfterRegistration is true
+            console.log 'sign in after registration is true...'
             Session.set 'talkingToServer', true
             Meteor.loginWithPassword userCredential, password, (error) ->
               Session.set 'talkingToServer', false
