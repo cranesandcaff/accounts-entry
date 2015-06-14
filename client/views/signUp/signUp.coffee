@@ -164,6 +164,7 @@ AccountsEntry.entrySignUpEvents = {
                 Router.go Session.get('fromWhere')
                 Session.set 'fromWhere', undefined
               else
+                console.log AccountsEntry.settings.setupUserRoute
                 Router.go AccountsEntry.settings.setupUserRoute
 
           else
