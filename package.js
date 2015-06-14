@@ -1,6 +1,6 @@
 Package.describe({
     summary: "Fork of joshowens accounts-entry with custom redirect after registration.",
-    version: '1.0.6',
+    version: '1.0.7',
     name: "caffinatedflowers:accounts-entry",
     githubUrl: 'https://github.com/cranesandcaff/accounts-entry',
 });

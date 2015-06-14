@@ -157,13 +157,11 @@ AccountsEntry.entrySignUpEvents = {
             console.log 'sign in after registration is true...'
             Session.set 'talkingToServer', true
             Meteor.loginWithPassword userCredential, password, (error) ->
+              console.log 'getting this far uh huh yep yep...should figure out local dev more...'
               Session.set 'talkingToServer', false
               if error
                 console.log error
                 T9NHelper.accountsError error
-              else if Session.get 'fromWhere'
-                Router.go Session.get('fromWhere')
-                Session.set 'fromWhere', undefined
               else
                 console.log AccountsEntry.settings.setupUserRoute
                 Router.go AccountsEntry.settings.setupUserRoute
